@@ -49,4 +49,8 @@ app.mount('#app');
 
 ## Examples
 
-Counter: [Source](https://github.com/zhourengui/vue3redux/example) | [Sandbox](https://codesandbox.io/p/sandbox/zhourengui-vue3redux-9yu2zd)
+Counter: [Source](https://github.com/zhourengui/vue3redux/tree/master/example) | [Sandbox](https://codesandbox.io/p/sandbox/zhourengui-vue3redux-9yu2zd)
+
+## Todo List
+
+- [ ] Add Tests
