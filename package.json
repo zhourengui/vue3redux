@@ -1,0 +1,47 @@
+{
+  "name": "@zhourengui/vue3redux",
+  "version": "1.2.1",
+  "type": "module",
+  "types": "dist/es/index.d.ts",
+  "main": "dist/es/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhourengui/vue3redux.git"
+  },
+  "homepage": "https://github.com/zhourengui",
+  "keywords": [
+    "redux",
+    "vue3js",
+    "vue"
+  ],
+  "scripts": {
+    "build": "./scripts/build.sh",
+    "serve": "./scripts/serve.sh"
+  },
+  "peerDependencies": {
+    "@reduxjs/toolkit": "^1.9.2",
+    "redux": "^4.2.1",
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@reduxjs/toolkit": "^1.9.2",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.17.5",
+    "esbuild-plugin-d.ts": "^1.1.0",
+    "esbuild-plugin-progress": "^1.0.1",
+    "redux": "^4.2.1",
+    "rimraf": "^4.1.2",
+    "typescript": "^4.9.5",
+    "unplugin-vue": "^4.0.2-beta.1",
+    "vue": "^3.2.47",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {},
+  "authors": [
+    "Rengui Zhou <729049182@qq.com> (https://github.com/zhourengui)"
+  ],
+  "files": [
+    "dist",
+    "src"
+  ]
+}
