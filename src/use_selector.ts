@@ -1,5 +1,6 @@
-import { ref, onUnmounted, UnwrapRef } from '@vue/runtime-core';
+import { onUnmounted, ref, UnwrapRef } from '@vue/runtime-core';
 import { Store } from 'redux';
+
 import { useStore } from './use_store';
 
 export type StateOf<T extends Store> = ReturnType<T['getState']>;
@@ -9,7 +10,7 @@ function defaultCompare<T>(prevState: T, nextState: T) {
 }
 
 export const useSelector = <T extends Object>(
-  selector: (state: T) => T[keyof T],
+  selector: (state: StateOf<Store>) => T,
   compare = defaultCompare
 ) => {
   const store = useStore() as Store<T>;

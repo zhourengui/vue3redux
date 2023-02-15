@@ -9,13 +9,13 @@
 
 <script setup lang="ts">
 import { useSelector, useDispatch } from '@zhourengui/vue3redux';
-import { RootState } from './stores';
 import {
   increment,
   decrement,
   incrementByAmount,
+  CounterState,
 } from './stores/counter_store';
 
-const counter = useSelector<RootState>((state) => state.counter);
+const counter = useSelector<CounterState>((state) => state.counter);
 const dispatch = useDispatch();
 </script>

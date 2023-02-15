@@ -41,9 +41,9 @@ app.mount('#app');
 <script setup lang="ts">
   import { useSelector, useDispatch } from 'vue3redux';
   import { increment } from 'stores/index';
-  import type { RootState } from 'stores/index';
+  import type { CounterState } from './stores/counter_store';
   const dispatch = useDispatch();
-  const counter = useSelector<RootState>((state) => state.counter);
+  const counter = useSelector<CounterState>((state) => state.counter);
 </script>
 ```
 
