@@ -1,6 +1,6 @@
 {
   "name": "@zhourengui/vue3redux",
-  "version": "1.2.1",
+  "version": "1.2.4",
   "type": "module",
   "types": "dist/es/index.d.ts",
   "main": "dist/es/index.js",
@@ -16,7 +16,8 @@
   ],
   "scripts": {
     "build": "./scripts/build.sh",
-    "serve": "./scripts/serve.sh"
+    "serve": "./scripts/serve.sh",
+    "publish": "npm run build && npm publish --access public"
   },
   "peerDependencies": {
     "@reduxjs/toolkit": "^1.9.2",
@@ -43,5 +44,6 @@
   "files": [
     "dist",
     "src"
-  ]
+  ],
+  "license": "MIT"
 }
