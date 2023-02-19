@@ -1,6 +1,6 @@
 {
   "name": "@zhourengui/vue3redux",
-  "version": "1.2.12",
+  "version": "1.2.16",
   "type": "module",
   "types": "dist/es/index.d.ts",
   "main": "dist/es/index.js",
@@ -41,8 +41,7 @@
     "Rengui Zhou <729049182@qq.com> (https://github.com/zhourengui)"
   ],
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "license": "MIT"
 }

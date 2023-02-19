@@ -13,7 +13,7 @@ export const useSelector = <T extends Object>(
   selector: (state: StateOf<Store>) => T,
   compare = defaultCompare
 ) => {
-  const store = useStore() as Store<T>;
+  const store = useStore() as Store;
   const prevState = selector(store.getState());
 
   const stateRef = ref(prevState);
