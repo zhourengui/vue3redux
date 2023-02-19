@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@zhourengui/vue3redux": "^1.2.0",
+    "@zhourengui/vue3redux": "^1.2.16",
     "vue": "^3.2.45"
   },
   "devDependencies": {
