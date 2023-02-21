@@ -15,7 +15,7 @@ await esbuild
     entryPoints: source.map((file) => `./src/${file}`),
     bundle: false,
     minify: isProduction,
-    outdir: 'dist/es',
+    outdir: 'lib/es',
     tsconfig: './tsconfig.json',
     format: 'esm',
     plugins: [progress(), dtsPlugin()],
