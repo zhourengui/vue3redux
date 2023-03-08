@@ -14,7 +14,7 @@ import {
   decrement,
   incrementByAmount,
   CounterState,
-} from './stores/counter_store';
+} from './stores';
 
 const counter = useSelector<CounterState>((state) => state.counter);
 const dispatch = useDispatch();

@@ -3,7 +3,7 @@
     "allowJs": false,
     "allowUnreachableCode": false,
     "declaration": true,
-    "outDir": "dist"
+    "outDir": "lib"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

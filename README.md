@@ -5,14 +5,14 @@ Provide Hooks for projects using Redux in Vue3
 ## Installation
 
 ```
-npm install vue3redux
+npm install @zhourengui/vue3redux
 # or
-yarn add vue3redux
+yarn add @zhourengui/vue3redux
 ```
 
 ## Basic Example
 
-##### Install `vue3redux` plugin
+##### Install `@zhourengui/vue3redux` plugin
 
 ```typescript
 import { createApp } from '@vue/runtime-dom';
@@ -30,7 +30,7 @@ app.use(vue3redux, { store: store });
 app.mount('#app');
 ```
 
-##### Used `vue3redux` in component
+##### Used `@zhourengui/vue3redux` in component
 
 ```html
 <template>
