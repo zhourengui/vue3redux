@@ -1,7 +1,7 @@
 import { createApp } from '@vue/runtime-dom';
 import { createVue3redux } from '@zhourengui/vue3redux';
 
-import App from './app.vue';
+import App from './App.vue';
 import { store } from './stores';
 
 import './style.css';
