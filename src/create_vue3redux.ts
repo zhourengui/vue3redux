@@ -9,6 +9,9 @@ export interface Vue3ReduxPluginOptions<T> {
   store: Store<T>;
 }
 
+/**
+ * Creates a vue3redux instance to be used by the application
+ */
 export function createVue3redux<T>() {
   const vue3redux = {
     install(app: App<Element>, options: Vue3ReduxPluginOptions<T>) {
