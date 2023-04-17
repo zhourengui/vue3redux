@@ -34,16 +34,43 @@ app.mount('#app');
 
 ```html
 <template>
-  <p>Count is: {{ counter.value }}</p>
+  <p>Count is: {{ counter }}</p>
   <button @click="() => dispatch(increment())">Increment Count</button>
+  <button @click="() => dispatch(decrement())">Decrement Count</button>
+  <button @click="() => dispatch(incrementByAmount(100))">
+    Increment By Amount
+  </button>
+  <p>Author: {{ author.name }}, {{ author.github }}</p>
+  <button
+    @click="
+      () =>
+        dispatch(
+          restoreAuthor({
+            name: `Rengui Zhou ${Math.random()}`,
+            github: 'https://github.com/zhourengui',
+          })
+        )
+    "
+  >
+    Change Author
+  </button>
 </template>
 
 <script setup lang="ts">
-  import { useSelector, useDispatch } from 'vue3redux';
-  import { increment } from 'stores/index';
-  import type { CounterState } from './stores/counter_store';
+  import { useSelector, useDispatch, storeToRefs } from '@zhourengui/vue3redux';
+  import {
+    increment,
+    decrement,
+    incrementByAmount,
+    RootState,
+    demoSlice,
+    restoreAuthor,
+  } from './stores';
+
+  const demoStore = useSelector((store: RootState) => store[demoSlice.name]);
+  const { counter, author } = storeToRefs(demoStore);
+
   const dispatch = useDispatch();
-  const counter = useSelector<CounterState>((state) => state.counter);
 </script>
 ```
 
