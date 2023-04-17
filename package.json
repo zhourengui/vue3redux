@@ -1,6 +1,6 @@
 {
   "name": "@zhourengui/vue3redux",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "type": "module",
   "types": "lib/es/index.d.ts",
   "main": "lib/es/index.js",
