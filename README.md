@@ -57,7 +57,7 @@ app.mount('#app');
 </template>
 
 <script setup lang="ts">
-  import { useSelector, useDispatch, storeToRefs } from '@zhourengui/vue3redux';
+  import { useSelector, useDispatch } from '@zhourengui/vue3redux';
   import {
     increment,
     decrement,
@@ -67,8 +67,9 @@ app.mount('#app');
     restoreAuthor,
   } from './stores';
 
-  const demoStore = useSelector((store: RootState) => store[demoSlice.name]);
-  const { counter, author } = storeToRefs(demoStore);
+  const { counter, author } = useSelector(
+    (store: RootState) => store[demoSlice.name]
+  );
 
   const dispatch = useDispatch();
 </script>

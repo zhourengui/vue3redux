@@ -1,18 +1,12 @@
-import { onUnmounted, ref, UnwrapRef } from '@vue/runtime-core';
+// @ts-nocheck
+
+import { onUnmounted, reactive, toRefs } from '@vue/runtime-core';
 import { Store } from 'redux';
 
 import { useStore } from './use_store';
+import { cloneDeep } from 'lodash-es';
 
 export type StateOf<T extends Store> = ReturnType<T['getState']>;
-
-/**
- * Compare whether the previous state is consistent with the latest state
- * @param prevState - previous state
- * @param nextState - latest state
- */
-function defaultCompare<T>(prevState: T, nextState: T) {
-  return prevState === nextState;
-}
 
 /**
  * A hook to access the redux store's state. This hook takes a selector function
@@ -37,27 +31,28 @@ function defaultCompare<T>(prevState: T, nextState: T) {
  *  const counter = useSelector((state: RootState) => state.counter);
  * <script>
  */
-export const useSelector = <T extends unknown>(
-  selector: (state: StateOf<Store>) => T,
-  compare = defaultCompare
+export const useSelector = <T extends object>(
+  selector: (state: StateOf<Store>) => T
 ) => {
-  const store = useStore() as Store;
+  const store = useStore() as Store<T>;
   const prevState = selector(store.getState());
 
-  const stateRef = ref(prevState);
+  const states = reactive(cloneDeep(prevState)) as T;
 
-  function updateStateRef() {
+  function updateState() {
     const nextState = selector(store.getState());
-    if (!compare(prevState, nextState)) {
-      stateRef.value = nextState as UnwrapRef<T>;
+    for (const key in nextState) {
+      if (Object.prototype.hasOwnProperty.call(nextState, key)) {
+        states[key] = cloneDeep(nextState[key]);
+      }
     }
   }
 
-  updateStateRef();
+  updateState();
 
-  const unsubscribe = store.subscribe(updateStateRef);
+  const unsubscribe = store.subscribe(updateState);
 
   onUnmounted(unsubscribe);
 
-  return stateRef;
+  return toRefs(states);
 };

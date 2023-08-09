@@ -10,7 +10,7 @@ import type { Dispatch, ThunkDispatch } from '@reduxjs/toolkit';
  * @example
  *
  * <script setup>
- *  import { useDispatch } from '@zhourengui/vue3redux';
+ *  import { useDispatch } from 'vue3redux';
  *  const dispatch = useDispatch();
  *  dispatch(increment())
  * <script>
